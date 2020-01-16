@@ -1,0 +1,17 @@
+* C:\Users\imprayudi\Documents\workspace\ad8066_filter\ltspice\ad8066_bandpass-filter_sim.asc
+XU1 VDD/2 N001 VDD 0 vout AD8066
+V1 vin 0 SINE(75e-3 5e-3 1000) AC 1 0
+R1 N001 N003 4.6K tol=1 pwr=0.1
+R2 vout N001 750K tol=1 pwr=0.1
+V2 VDD 0 5
+C1 vout N001 210p V=50 Irms=0 Rser=0 Lser=0
+C2 N003 vin 18µ V=2.5 Irms=0 Rser=0 Lser=0
+R3 VDD N002 10K tol=1 pwr=0.1
+R4 N002 0 10K tol=1 pwr=0.1
+R5 VDD/2 N002 1K tol=1 pwr=0.1
+XU2 VDD/2 vout VDD 0 comp AD8066
+C3 N002 0 10µ V=2.5 Irms=0 Rser=0 Lser=0 mfg="Murata" pn="GRM155R60E106ME16" type="X5R"
+.ac dec 1000 1 1e6
+.lib ADI.lib
+.backanno
+.end
